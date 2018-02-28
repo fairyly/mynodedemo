@@ -24,7 +24,11 @@ windows环境下!!!
   - [3.2 路由](https://github.com/nswbmw/N-blog/blob/master/book/3.2%20%E8%B7%AF%E7%94%B1.md)
   - [3.3 模板引擎 ejs](https://github.com/nswbmw/N-blog/blob/master/book/3.3%20%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E.md)
   - [3.4 Express 浅析](https://github.com/nswbmw/N-blog/blob/master/book/3.4%20Express%20%E6%B5%85%E6%9E%90.md)
-
+  - 每次修改代码保存后，我们都需要手动重启程序，才能查看改动的效果。使用 supervisor 可以解决这个繁琐的问题，全局安装 supervisor：
+  ```
+    npm i -g supervisor
+    运行 supervisor index 启动程序
+  ```
 
 3. 学习如何使用 Express + MongoDB 搭建一个博客。
 ```
