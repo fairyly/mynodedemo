@@ -2,6 +2,12 @@
 mynodedemo---Node+Express + MongoDB 
 
 
+忽略不提交文件或目录
+```
+打开 git bash 后，输入 touch .gitignore ,然后在 .gitignore 文件里输入你要忽略的文件夹及其文件就可以
+
+```
+
 * STUDY BY N-BLOG
 
 * https://github.com/nswbmw/N-blog/tree/master/book
