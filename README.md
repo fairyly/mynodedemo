@@ -40,6 +40,11 @@ windows环境下!!!
       req.body: 解析后请求体，需使用相关的模块，如 body-parser，请求体为 {"name": "haha"}，则 req.body 为 {name: 'haha'}
     ```
   - [3.3 模板引擎 ejs](https://github.com/nswbmw/N-blog/blob/master/book/3.3%20%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E.md)
+    ```
+      设置:
+      app.set('views', path.join(__dirname, 'views'))// 设置存放模板文件的目录
+      app.set('view engine', 'ejs')// 设置模板引擎为 ejs
+    ```
   - [3.4 Express 浅析](https://github.com/nswbmw/N-blog/blob/master/book/3.4%20Express%20%E6%B5%85%E6%9E%90.md)
   
 
