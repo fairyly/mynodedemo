@@ -20,3 +20,13 @@ mynodedemo---Node+Express + MongoDB
   - [3.3 模板引擎 ejs](https://github.com/nswbmw/N-blog/blob/master/book/3.3%20%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E.md)
   - [3.4 Express 浅析](https://github.com/nswbmw/N-blog/blob/master/book/3.4%20Express%20%E6%B5%85%E6%9E%90.md)
 
+
+3. 学习如何使用 Express + MongoDB 搭建一个博客。
+```
+Node.js: 8.9.1
+MongoDB: 3.4.10
+Express: 4.16.2
+```
+
+4.准备工作
+
