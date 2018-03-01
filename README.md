@@ -15,3 +15,7 @@ blog 基础结构
   index.js: 程序主文件
   package.json: 存储项目名、描述、作者、依赖等等信息
 ```
+* 安装依赖模块
+```
+  npm i config-lite connect-flash connect-mongo ejs express express-formidable express-session marked moment mongolass objectid-to-timestamp sha1 winston express-winston --save
+```
