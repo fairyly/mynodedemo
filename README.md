@@ -44,6 +44,12 @@ windows环境下!!!
       设置:
       app.set('views', path.join(__dirname, 'views'))// 设置存放模板文件的目录
       app.set('view engine', 'ejs')// 设置模板引擎为 ejs
+      我们在模板 <%= name.toUpperCase() %> 中使用了 JavaScript 的语法 .toUpperCase() 将名字转化为大写，那这个 <%= xxx %> 是什么东西呢？ejs 有 3 种常用标签：
+
+      <% code %>：运行 JavaScript 代码，不输出
+      <%= code %>：显示转义后的 HTML内容
+      <%- code %>：显示原始 HTML 内容
+      注意：<%= code %> 和 <%- code %> 都可以是 JavaScript 表达式生成的字符串，当变量 code 为普通字符串时，两者没有区别。当 code 比如为       <h1>hello</h1> 这种字符串时，<%= code %> 会原样输出 <h1>hello</h1>，而 <%- code %> 则会显示 H1 大的 hello 字符串。
     ```
   - [3.4 Express 浅析](https://github.com/nswbmw/N-blog/blob/master/book/3.4%20Express%20%E6%B5%85%E6%9E%90.md)
   
