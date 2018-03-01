@@ -38,8 +38,8 @@ blog 基础结构
 ```
 
 *  配置文件
-  - config-lite
-  ```
+  - config-lite
+  ```
     myblog 下新建 config 目录，在该目录下新建 default.js，添加如下代码
     module.exports = {
       port: 3000,
@@ -54,5 +54,5 @@ blog 基础结构
     port: 程序启动要监听的端口号
     session: express-session 的配置信息，后面介绍
     mongodb: mongodb 的地址，以 mongodb:// 协议开头，myblog 为 db 名
-  ```
+  ```
 
