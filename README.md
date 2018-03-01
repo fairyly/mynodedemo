@@ -1,6 +1,6 @@
 # mynode blog
 
-myblog-basestruct
+### myblog-basestruct
 
 blog 基础结构
 
@@ -232,3 +232,13 @@ http://localhost:3000/posts
 http://localhost:3000/signout
 http://localhost:3000/signup
 ```
+
+### myblog-node-adduser
+
+1.添加各个路由对应模板的页面和样式, 添加公共头,公共尾
+
+2.设置全局变量: app.locals 和 res.locals
+  ```
+    app.locals 上通常挂载常量信息（如博客名、描述、作者这种不会变的信息），
+    res.locals 上通常挂载变量信息，即每次请求可能的值都不一样（如请求者信息，res.locals.user = req.session.user）。
+  ```
