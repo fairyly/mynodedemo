@@ -10,7 +10,8 @@ windows环境下!!!
 ```
 
 **UI: https://semantic-ui.com**
-**node:  **
+
+**node**
 
 
 * STUDY BY N-BLOG
