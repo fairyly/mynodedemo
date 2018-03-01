@@ -381,3 +381,89 @@ mongolass.plugin('addCreatedAt', {
   }
 })
 ```
+
+
+8. 添加日志
+
+```
+使用 winston 和 express-winston 记录日志。
+
+新建 logs 目录存放日志文件，修改 index.js，在：
+
+index.js
+
+const pkg = require('./package')
+
+下引入所需模块：
+
+const winston = require('winston')
+const expressWinston = require('express-winston')
+将：
+
+// 路由
+routes(app)
+修改为：
+
+// 正常请求的日志
+app.use(expressWinston.logger({
+  transports: [
+    new (winston.transports.Console)({
+      json: true,
+      colorize: true
+    }),
+    new winston.transports.File({
+      filename: 'logs/success.log'
+    })
+  ]
+}))
+// 路由
+routes(app)
+// 错误请求的日志
+app.use(expressWinston.errorLogger({
+  transports: [
+    new winston.transports.Console({
+      json: true,
+      colorize: true
+    }),
+    new winston.transports.File({
+      filename: 'logs/error.log'
+    })
+  ]
+}))
+刷新页面看一下终端输出及 logs 下的文件。 可以看出：winston 将正常请求的日志打印到终端并写入了 logs/success.log，将错误请求的日志打印到终端并写入了 logs/error.log。
+
+注意：记录正常请求日志的中间件要放到 routes(app) 之前，记录错误请求日志的中间件要放到 routes(app) 之后。
+```
+
+9. 添加 404 / 505 页面
+
+```
+自定义 404 页面。修改 routes/index.js，在：
+
+routes/index.js
+
+app.use('/comments', require('./comments'))
+下添加如下代码：
+
+// 404 page
+app.use(function (req, res) {
+  if (!res.headersSent) {
+    res.status(404).render('404')
+  }
+})
+
+----------------------------------------
+新建 views/404.ejs，添加如下代码：
+
+views/404.ejs
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= blog.title %></title>
+    <script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
+  </head>
+  <body></body>
+</html>
+```
