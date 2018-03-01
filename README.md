@@ -273,6 +273,8 @@ http://localhost:3000/signup
     const mongolass = new Mongolass()
     mongolass.connect(config.mongodb)
     
+    ------------------------------------------------
+    
     lib/mongo.js
 
     exports.User = mongolass.model('User', {
@@ -288,6 +290,21 @@ http://localhost:3000/signup
     小提示：required: true 表示该字段是必需的，default: xxx 用于创建文档时设置默认值。更多关于 Mongolass 的 schema 的用法，请查阅 another-json-schema。
 
     小提示：Mongolass 中的 model 你可以认为相当于 mongodb 中的 collection，只不过添加了插件的功能。
+    
+    -----------------------------------------------------------
+    
+    models/users.js，添加如下代码：
+
+    models/users.js
+
+    const User = require('../lib/mongo').User
+
+    module.exports = {
+      // 注册一个用户
+      create: function create (user) {
+        return User.create(user).exec()
+      }
+    }
   ```
 4. 添加用户
 
