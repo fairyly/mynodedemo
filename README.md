@@ -244,11 +244,11 @@ http://localhost:3000/signup
 
     修改 index.js，在 routes(app) 上一行添加如下代码：
 
-  // 设置模板全局常量
-  app.locals.blog = {
-    title: pkg.name,
-    description: pkg.description
-  }
+    // 设置模板全局常量
+    app.locals.blog = {
+      title: pkg.name,
+      description: pkg.description
+    }
 
     // 添加模板必需的三个变量
     app.use(function (req, res, next) {
@@ -257,5 +257,5 @@ http://localhost:3000/signup
       res.locals.error = req.flash('error').toString()
       next()
     })
-这样在调用 res.render 的时候就不用传入这四个变量了，express 为我们自动 merge 并传入了模板，所以我们可以在模板中直接使用这四个变量。
+    这样在调用 res.render 的时候就不用传入这四个变量了，express 为我们自动 merge 并传入了模板，所以我们可以在模板中直接使用这四个变量。
   ```
