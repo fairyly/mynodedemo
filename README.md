@@ -9,7 +9,7 @@ windows环境下!!!
 
 ```
 
-**UI: https://semantic-ui.com **
+**UI: https://semantic-ui.com**
 **node:  **
 
 
