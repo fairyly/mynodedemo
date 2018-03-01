@@ -273,3 +273,9 @@ http://localhost:3000/signup
     const mongolass = new Mongolass()
     mongolass.connect(config.mongodb)
   ```
+4. 添加用户
+
+```
+  注意：我们使用 sha1 加密用户的密码，sha1 并不是一种十分安全的加密方式，实际开发中可以使用更安全的 bcrypt 或 scrypt 加密。 
+  注意：注册失败时（参数校验失败或者存数据库时出错）删除已经上传到 public/img 目录下的头像。
+```
