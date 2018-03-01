@@ -260,3 +260,6 @@ http://localhost:3000/signup
     })
     这样在调用 res.render 的时候就不用传入这四个变量了，express 为我们自动 merge 并传入了模板，所以我们可以在模板中直接使用这四个变量。
   ```
+
+3.连接数据库
+  - 使用 Mongolass
