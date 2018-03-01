@@ -264,12 +264,12 @@ http://localhost:3000/signup
 3.连接数据库
   - 使用 Mongolass
   ```
-  在 myblog 下新建 lib 目录，在该目录下新建 mongo.js，添加如下代码：
+    在 myblog 下新建 lib 目录，在该目录下新建 mongo.js，添加如下代码：
 
-  lib/mongo.js
+    lib/mongo.js
 
-  const config = require('config-lite')(__dirname)
-  const Mongolass = require('mongolass')
-  const mongolass = new Mongolass()
-  mongolass.connect(config.mongodb)
-  ```
+    const config = require('config-lite')(__dirname)
+    const Mongolass = require('mongolass')
+    const mongolass = new Mongolass()
+    mongolass.connect(config.mongodb)
+  ```
