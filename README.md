@@ -37,3 +37,18 @@ blog 基础结构
   express-winston: express 的 winston 日志中间件
 ```
 
+*  配置文件
+  - config-lite
+  ```
+    myblog 下新建 config 目录，在该目录下新建 default.js，添加如下代码
+    module.exports = {
+      port: 3000,
+      session: {
+        secret: 'myblog',
+        key: 'myblog',  
+        maxAge: 2592000000
+      },
+      mongodb: 'mongodb://localhost:27017/myblog'
+    }
+  ```
+
