@@ -222,7 +222,9 @@ routes(app)
 app.listen(config.port, function () {
   console.log(`${pkg.name} listening on port ${config.port}`)
 })
-注意：中间件的加载顺序很重要。如上面设置静态文件目录的中间件应该放到 routes(app) 之前加载，这样静态文件的请求就不会落到业务逻辑的路由里；flash 中间件应该放到 session 中间件之后加载，因为 flash 是基于 session 实现的。
+注意：中间件的加载顺序很重要。如上面设置静态文件目录的中间件应该放到 routes(app) 之前加载，
+这样静态文件的请求就不会落到业务逻辑的路由里；
+flash 中间件应该放到 session 中间件之后加载，因为 flash 是基于 session 实现的。
 
 运行 supervisor index 启动博客，访问以下地址查看效果：
 
