@@ -1,4 +1,5 @@
 # mynodedemo
+
 mynodedemo---Node+Express + MongoDB 
 
 windows环境下!!!
@@ -10,6 +11,8 @@ windows环境下!!!
 ```
 
 **UI: https://semantic-ui.com**
+
+了解熟悉 node 的工作
 
 **node**
 
