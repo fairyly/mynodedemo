@@ -312,3 +312,25 @@ http://localhost:3000/signup
   注意：我们使用 sha1 加密用户的密码，sha1 并不是一种十分安全的加密方式，实际开发中可以使用更安全的 bcrypt 或 scrypt 加密。 
   注意：注册失败时（参数校验失败或者存数据库时出错）删除已经上传到 public/img 目录下的头像。
 ```
+
+5.登出
+现在我们来完成登出的功能。修改 routes/signout.js 如下：
+```
+routes/signout.js
+
+const express = require('express')
+const router = express.Router()
+
+const checkLogin = require('../middlewares/check').checkLogin
+
+// GET /signout 登出
+router.get('/', checkLogin, function (req, res, next) {
+  // 清空 session 中用户信息
+  req.session.user = null
+  req.flash('success', '登出成功')
+  // 登出成功后跳转到主页
+  res.redirect('/posts')
+})
+
+module.exports = router
+```
