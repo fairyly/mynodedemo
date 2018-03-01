@@ -334,3 +334,50 @@ router.get('/', checkLogin, function (req, res, next) {
 
 module.exports = router
 ```
+
+6.登录
+
+```
+添加 getUserByName 方法用于通过用户名获取用户信息：
+
+models/users.js
+
+const User = require('../lib/mongo').User
+
+module.exports = {
+  // 注册一个用户
+  create: function create (user) {
+    return User.create(user).exec()
+  },
+
+  // 通过用户名获取用户信息
+  getUserByName: function getUserByName (name) {
+    return User
+      .findOne({ name: name })
+      .addCreatedAt()
+      .exec()
+  }
+}
+这里我们使用了 addCreatedAt 自定义插件（通过 _id 生成时间戳），修改 lib/mongo.js，添加如下代码：
+
+lib/mongo.js
+
+const moment = require('moment')
+const objectIdToTimestamp = require('objectid-to-timestamp')
+
+// 根据 id 生成创建时间 created_at
+mongolass.plugin('addCreatedAt', {
+  afterFind: function (results) {
+    results.forEach(function (item) {
+      item.created_at = moment(objectIdToTimestamp(item._id)).format('YYYY-MM-DD HH:mm')
+    })
+    return results
+  },
+  afterFindOne: function (result) {
+    if (result) {
+      result.created_at = moment(objectIdToTimestamp(result._id)).format('YYYY-MM-DD HH:mm')
+    }
+    return result
+  }
+})
+```
