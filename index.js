@@ -20,6 +20,7 @@ app.set('view engine', 'ejs')
 
 // 设置静态文件目录
 app.use(express.static(path.join(__dirname, 'public')))
+
 // session 中间件
 app.use(session({
   name: config.session.key, // 设置 cookie 中保存 session id 的字段名称
@@ -95,6 +96,15 @@ app.use(function (err, req, res, next) {
 })
 
 // 监听端口，启动程序
-app.listen(config.port, function () {
+/*app.listen(config.port, function () {
   console.log(`${pkg.name} listening on port ${config.port}`)
-})
+})*/
+if (module.parent) {
+  // 被 require，则导出 app
+  module.exports = app
+} else {
+  // 监听端口，启动程序
+  app.listen(config.port, function () {
+    console.log(`${pkg.name} listening on port ${config.port}`)
+  })
+}
