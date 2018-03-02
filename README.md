@@ -382,6 +382,8 @@ mongolass.plugin('addCreatedAt', {
 })
 ```
 
+7. 增加文章发表
+
 
 8. 添加日志
 
