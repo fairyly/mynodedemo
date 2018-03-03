@@ -53,3 +53,12 @@ package.json
 然后运行 npm start 通过 pm2 启动程序
 
 >>> 我在 windows 系统遇到问题： npm start 时候出现 'NODE_ENV' 不是内部或外部命令，也不是可运行的程序或批处理文件。
+最后 看到 http://blog.csdn.net/z69183787/article/details/54138818 设置 "start": "cross-env NODE_ENV=production pm2 start index.js --name 'myblog'"
+使用方法：
+安装across-env:npm install cross-env --save-dev
+
+在NODE_ENV=xxxxxxx前面添加cross-env就可以了。
+
+ set NODE_ENV=development && webpack --config webpack.config.dev.js
+ 
+也可以实现一样的效果
