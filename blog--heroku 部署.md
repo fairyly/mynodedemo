@@ -26,7 +26,7 @@
 
     npm i cross-env -g
     cross-env NODE_ENV=production supervisor index
-  ```
+  ```
   
 * cross-env： https://github.com/kentcdodds/cross-env
 
@@ -37,6 +37,7 @@
 pm2 是 Node.js 下的生产环境进程管理工具，就是我们常说的进程守护工具，  
 可以用来在生产环境中进行自动重启、日志记录、错误预警等等。  
 以 pm2 为例，全局安装 pm2：  
+
 ```
 npm i pm2 -g
 
