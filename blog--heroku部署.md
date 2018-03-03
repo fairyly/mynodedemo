@@ -8,5 +8,7 @@
     
     To connect using a driver via the standard MongoDB URI (what's this?):
     mongodb://<dbuser>:<dbpassword>@ds151528.mlab.com:51528/myblog
+    
+    yhq   yhq123456
 
   ```
