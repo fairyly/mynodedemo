@@ -29,6 +29,7 @@
   ```
   
 * cross-env： https://github.com/kentcdodds/cross-env
+  - Run scripts that set and use environment variables across platforms
 
 * pm2
 
