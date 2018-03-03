@@ -54,6 +54,16 @@ package.json
 
 然后运行 npm start 通过 pm2 启动程序
 
+pm2 常用命令:
+```
+pm2 start/stop: 启动/停止程序
+pm2 reload/restart [id|name]: 重启程序
+pm2 logs [id|name]: 查看日志
+pm2 l/list: 列出程序列表
+更多命令请使用 pm2 -h 查看。
+```
+
+
 >>> 我在 windows 系统遇到问题： npm start 时候出现 'NODE_ENV' 不是内部或外部命令，也不是可运行的程序或批处理文件。
 最后 看到 http://blog.csdn.net/z69183787/article/details/54138818 设置 "start": "cross-env NODE_ENV=production pm2 start index.js --name 'myblog'"
 使用方法：
