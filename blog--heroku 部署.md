@@ -76,3 +76,45 @@ pm2 l/list: 列出程序列表
  set NODE_ENV=development && webpack --config webpack.config.dev.js
  
 也可以实现一样的效果
+
+
+
+* heroku :https://www.heroku.com/home
+
+打开 index.js，将 app.listen 修改为：
+
+```
+const port = process.env.PORT || config.port
+app.listen(port, function () {
+  console.log(`${pkg.name} listening on port ${port}`)
+})
+```
+因为 Heroku 会动态分配端口（通过环境变量 PORT 指定），所以不能用配置文件里写死的端口。
+
+3.修改 package.json，在 scripts 添加：
+```
+"heroku": "NODE_ENV=production node index"
+```
+在根目录下新建 Procfile 文件，添加如下内容：
+```
+web: npm run heroku
+```
+Procfile 文件告诉 Heroku 该使用什么命令启动一个 web 服务。更多信息见：https://devcenter.heroku.com/articles/getting-started-with-nodejs。
+
+然后输入以下命令：
+```
+git init
+heroku git:remote -a 你的应用名称
+git add .
+git commit -am "init"
+git push heroku master
+```
+稍后，就部署成功了。使用：
+
+heroku open
+
+打开应用主页。如果出现 "Application error"，使用：
+
+heroku logs
+
+查看日志，调试完后 commit 并 push 到 heroku重新部署。
