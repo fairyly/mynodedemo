@@ -4,7 +4,8 @@
   "description": "my node blog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul cover _mocha",
+    "start": "cross-env NODE_ENV=production pm2 start index.js --name 'myblog'"
   },
   "author": "",
   "license": "ISC",
