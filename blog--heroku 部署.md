@@ -26,7 +26,9 @@
 
     npm i cross-env -g
     cross-env NODE_ENV=production supervisor index
-  ```
+  ```
+  
+* cross-env： https://github.com/kentcdodds/cross-env
 
 * pm2
 
