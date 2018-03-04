@@ -1,5 +1,7 @@
 # blog--heroku 部署
 
+* 已经部署到 heroku: https://desolate-coast-83590.herokuapp.com/posts
+
 * mongodb 数据库申请 [MLab](https://mlab.com/)
   - 创建数据、用户名和密码，最后得到连接
   ```
@@ -118,3 +120,11 @@ heroku open
 heroku logs
 
 查看日志，调试完后 commit 并 push 到 heroku重新部署。
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+* 部署问题
+
+1. 如果有目录不存在，会出现 application error；遇到的就是 logs 目录不存在，报错了
+
