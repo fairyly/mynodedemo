@@ -1,0 +1,22 @@
+{
+  "apps": [
+      {
+          "name": "tbk",
+          "script": "./bin/www",
+          "args": [],
+          "watch": true,
+          "ignore_watch": [
+              "node_modules",
+              "public"
+          ],
+          "node_args": "",
+          "exec_mode": "cluster",
+          "merge_logs": true,
+          "cwd": "/home/tdt/",
+          "env": {
+            "NODE_ENV": "production",
+            "PORT": 80
+        }
+      }
+  ]
+}

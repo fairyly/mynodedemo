@@ -1,0 +1,86 @@
+extends head
+block content
+  body#hotBody
+    header.mui-bar.mui-bar-nav.header
+      a.mui-action-back.mui-icon.mui-pull-left(href="")
+        i.iconfont &#xe602;
+      h1.mui-title #{title}
+      a.mui-icon.mui-pull-right(href="/")
+        i.iconfont &#xe601;
+    .mui-content
+      // 搜索
+      .search
+    
+        #searchForm.mui-input-row.mui-search
+          input#searchInput.mui-input-clear(type="search" onkeyup="javascript:enterSearch(event)" ,placeholder="请输入商品名称")
+        button#searchSubmit.mui-btn.mui-btn-outlined(type="button" data-loading-icon-position="right" style = 'height:38px;') 搜索
+      // 分类
+      .title
+        img(src=helpers.assetUrl("c.png"))
+      ul.mui-table-view.mui-grid-view.mui-grid-9.category
+        li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-4
+          a(href="/category?id=1")
+            .mui-media-body 精品女装
+            span
+              img(src=helpers.assetUrl("jpnz.png"))
+        li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-4
+          a(href="/category?id=2")
+            .mui-media-body 精品男装
+            span
+              img(src=helpers.assetUrl("nz.png"))
+        li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-4
+          a(href="/category?id=3")
+            .mui-media-body 家居日常
+            span
+              img(src=helpers.assetUrl("jjrc.png"))
+        li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-4
+          a(href="/category?id=4")
+            .mui-media-body 数码家电
+            span
+              img(src=helpers.assetUrl("smjd.png"))
+        li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-4
+          a(href="/category?id=5")
+            .mui-media-body 妈咪宝贝
+            span
+              img(src=helpers.assetUrl("mmbb.png"))
+        li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-4
+          a(href="/category?id=6")
+            .mui-media-body 休闲零食
+            span
+              img(src=helpers.assetUrl("xxls.png"))
+        li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-4
+          a(href="/category?id=7")
+            .mui-media-body 鞋包配饰
+            span
+              img(src=helpers.assetUrl("xbps.png"))
+        li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-4
+          a(href="/category?id=8")
+            .mui-media-body 个人护理
+            span
+              img(src=helpers.assetUrl("grhl.png"))
+        li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-4
+          a(href="/category?id=9")
+            .mui-media-body 儿童服装
+            span
+              img(src=helpers.assetUrl("etfz.png"))
+        li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-4
+          a(href="/category?id=10")
+            .mui-media-body 户外运动
+            span
+              img(src=helpers.assetUrl("ydhw.png"))
+        li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-4
+          a(href="/category?id=11")
+            .mui-media-body 汽车用品
+            span
+              img(src=helpers.assetUrl("qcyp.png"))
+        li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-4
+          a(href="/category?id=12")
+            .mui-media-body 宠物用品
+            span
+              img(src=helpers.assetUrl("cwyp.png"))
+    // 底部导航
+    include footer
+    script.
+      $($('.jl nav.mui-bar.mui-bar-tab a')[1]).addClass('mui-active');
+      init();
+      

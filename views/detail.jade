@@ -1,0 +1,76 @@
+extends head
+append head
+  script(type='text/javascript' src=helpers.assetUrl('detail.js'))
+block content
+  body
+    // 图片轮播
+    #num_iid(style = "display:none;")= detailJson.num_iid
+    img(src=`${detailJson.img}` style="width: 100%;")
+    .g-desc
+      h2 
+        svg.icon(aria-hidden="true")
+          case detailJson.user_type
+            when "0"
+              use(xlink:href="#icon-taobao3") 
+            default
+              use(xlink:href="#icon-tianmao1")          
+        = ` ${detailJson.title}`
+      
+    .g-price
+      span.fl.money
+        svg.icon(aria-hidden="true" style="font-size: 15vw; vertical-align: -0.35em;")
+          use(xlink:href="#icon-quanhoujia") 
+        =`￥${detailJson.disprice}`
+    .g-price
+      .fl.delmoney 现价
+      del.fl.delmoney=` ￥${detailJson.price} `
+      i.fr.num=`月销量 ${detailJson.volume}件`
+    .g-mall-infor
+      .g-mall-name.fl
+        p 
+          svg.icon(aria-hidden="true")
+            use(xlink:href="#icon-youhuiquan1") 
+          |  优惠券
+          b=` ${detailJson.coupon_val}元`
+          =` (满${detailJson.limit}使用)`
+        p 
+          svg.icon(aria-hidden="true")
+            use(xlink:href="#icon-shijian2") 
+          |  有效期
+          =` (${detailJson.coupon_start_time}到${detailJson.coupon_end_time})`
+        p
+          svg.icon(aria-hidden="true")
+            use(xlink:href="#icon-lianjie2")
+          = ` 淘口令 `
+          i.manualTpwd(contenteditable="true")=detailJson.tpwd
+        p(style="color:red;")
+          svg.icon(aria-hidden="true")
+            use(xlink:href="#icon-tishi2") 
+          |  提示 点击淘口令购买后请打开【手机淘宝】
+    // 图文详情
+    //相关商品
+    .title
+      img(src=helpers.assetUrl('xgsp.png'))
+    ul.wrapper( style="display: block;")
+      each item in relevant
+        include commoditiesShow
+      li.bottom
+        span(style='')
+          svg.icon(aria-hidden="true")
+            use(xlink:href="#icon-meiyousoudaoxinxi")
+          p 我也是有底线的
+    // 固定在底部的按钮
+    .jl
+    .fix-mall-btn
+      .fix-mall-index.fl
+        a(href="/")
+          i.iconfont &#xe601;
+          p 首页
+        a.collect(href=`javascript:collect()`)
+          i.iconfont &#xe675;
+          p 收藏
+      .fix-buy-btn.fr
+        button.tpwd('data-clipboard-text'=detailJson.tpwd) 淘口令购买
+      .fix-buy-btn.fr
+        a.collect(href=`${detailJson.coupon_url}`)
+          p 浏览器购买

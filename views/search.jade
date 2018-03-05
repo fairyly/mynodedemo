@@ -1,0 +1,33 @@
+extends head
+append head
+  script(type='text/javascript' src=helpers.assetUrl("search.js"))
+block content
+  body#seachBody
+    header.mui-bar.mui-bar-nav.header(style="height: 125px; padding:0;")
+      div(style="padding: 0 10px")
+        a.mui-action-back.mui-icon.mui-pull-left(href="")
+          i.iconfont &#xe602;
+        h1.mui-title #{title}
+        a.mui-icon.mui-pull-right(href="/")
+          i.iconfont &#xe601;
+      // 搜索
+      .search(style="padding: 0 .3rem; margin-top: .8rem;")
+        #searchForm.mui-input-row.mui-search
+          input#searchInput.mui-input-clear(type="search" onkeyup="javascript:enterSearch(event)" value=keyword,placeholder="请输入商品名称")
+        button#searchSubmit.mui-btn.mui-btn-outlined(type="button" data-loading-icon-position="right") 搜索
+      include sort
+    #keyword(value=`${keyword}`)
+    .mui-content(style=" padding-top: 124px;")
+      ul.wrapper( style="display: block;")
+      ul.wrapper 
+      ul.wrapper
+      ul.wrapper
+      ul.wrapper
+      ul.wrapper   
+    // 回到顶部
+    .up
+      a(href='#top')
+        svg.icon(aria-hidden="true")
+          use(xlink:href="#icon-dingbu1")
+    // 底部导航
+    include footer

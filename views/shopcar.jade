@@ -1,0 +1,156 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no")
+    title #{title}
+    script(src="js/mui.min.js")
+    script(type="text/javascript", src="js/jquery-1.10.1.min.js")
+    script(type="text/javascript", src="js/shop.js")
+    link(href="css/mui.min.css", rel="stylesheet")
+    link(rel="stylesheet", href="css/style.css")
+    script(type="text/javascript").
+      !function(J){function H(){var d=E.getBoundingClientRect().width;var e=(d/7.5>100*B?100*B:(d/7.5<42?42:d/7.5));E.style.fontSize=e+"px",J.rem=e}var G,F=J.document,E=F.documentElement,D=F.querySelector('meta[name="viewport"]'),B=0,A=0;if(D){var y=D.getAttribute("content").match(/initial\\-scale=([\d\.]+)/);y&&(A=parseFloat(y[1]),B=parseInt(1/A))}if(!B&&!A){var u=(J.navigator.appVersion.match(/android/gi),J.navigator.appVersion.match(/iphone/gi)),t=J.devicePixelRatio;B=u?t>=3&&(!B||B>=3)?3:t>=2&&(!B||B>=2)?2:1:1,A=1/B}if(E.setAttribute("data-dpr",B),!D){if(D=F.createElement("meta"),D.setAttribute("name","viewport"),D.setAttribute("content","initial-scale="+A+", maximum-scale="+A+", minimum-scale="+A+", user-scalable=no"),E.firstElementChild){E.firstElementChild.appendChild(D)}else{var s=F.createElement("div");s.appendChild(D),F.write(s.innerHTML)}}J.addEventListener("resize",function(){clearTimeout(G),G=setTimeout(H,300)},!1),J.addEventListener("pageshow",function(b){b.persisted&&(clearTimeout(G),G=setTimeout(H,300))},!1),H()}(window);
+      if (typeof(M) == 'undefined' || !M){
+        window.M = {};
+      }
+  body
+    header.mui-bar.mui-bar-nav.header
+      a.mui-action-back.mui-icon.mui-pull-left(href="")
+        i.iconfont &#xe602;
+      h1.mui-title 购物车
+      a.mui-icon.mui-pull-right(href="/")
+        i.iconfont &#xe601;
+    .mui-content
+      .shopping
+        .shop-group-item
+          .shop-name
+            input.check.goods-check.shopCheck(type="checkbox")
+            h4
+              a(href="#") 书包专卖店
+            // <div class="coupons"><span>领券</span><em>|</em><span>编辑</span></div>
+          ul
+            li
+              .shop-info
+                input.check.goods-check.goodsCheck(type="checkbox")
+                .shop-info-img
+                  a(href="#")
+                    img(src="images/qcp.png")
+                .shop-info-text
+                  h4 好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号
+                  .shop-brief
+                    span 重量:3.3kg
+                    span 颜色:标配版
+                  .shop-price
+                    .shop-pices
+                      | ￥
+                      b.price 100.00
+                    .shop-arithmetic
+                      a.minus(href="javascript:;") -
+                      span.num 1
+                      a.plus(href="javascript:;") +
+            .shop-info
+              input.check.goods-check.goodsCheck(type="checkbox")
+              .shop-info-img
+                a(href="#")
+                  img(src="images/qcp.png")
+              .shop-info-text
+                h4 好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号
+                .shop-brief
+                  span 重量:3.3kg
+                  span 颜色:标配版
+                .shop-price
+                  .shop-pices
+                    | ￥
+                    b.price 100.00
+                  .shop-arithmetic
+                    a.minus(href="javascript:;") -
+                    span.num 1
+                    a.plus(href="javascript:;") +
+            li
+              .shop-info
+                input.check.goods-check.goodsCheck(type="checkbox")
+                .shop-info-img
+                  a(href="#")
+                    img(src="images/qcp.png")
+                .shop-info-text
+                  h4 好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号
+                  .shop-brief
+                    span 重量:3.3kg
+                    span 颜色:标配版
+                  .shop-price
+                    .shop-pices
+                      | ￥
+                      b.price 100.00
+                    .shop-arithmetic
+                      a.minus(href="javascript:;") -
+                      span.num 1
+                      a.plus(href="javascript:;") +
+          .shopPrice
+            | 本店总计：￥
+            span.shop-total-amount.ShopTotal 0.00
+        .h10
+        .shop-group-item
+          .shop-name
+            input.check.goods-check.shopCheck(type="checkbox")
+            h4
+              a(href="#") 书包专卖店
+            // <div class="coupons"><span>领券</span><em>|</em><span>编辑</span></div>
+          ul
+            li
+              .shop-info
+                input.check.goods-check.goodsCheck(type="checkbox")
+                .shop-info-img
+                  a(href="#")
+                    img(src="images/qcp.png")
+                .shop-info-text
+                  h4 好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号
+                  .shop-brief
+                    span 重量:3.3kg
+                    span 颜色:标配版
+                  .shop-price
+                    .shop-pices
+                      | ￥
+                      b.price 100.00
+                    .shop-arithmetic
+                      a.minus(href="javascript:;") -
+                      span.num 1
+                      a.plus(href="javascript:;") +
+            li
+              .shop-info
+                input.check.goods-check.goodsCheck(type="checkbox")
+                .shop-info-img
+                  a(href="#")
+                    img(src="images/qcp.png")
+                .shop-info-text
+                  h4 好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号
+                  .shop-brief
+                    span 重量:3.3kg
+                    span 颜色:标配版
+                  .shop-price
+                    .shop-pices
+                      | ￥
+                      b.price 100.00
+                    .shop-arithmetic
+                      a.minus(href="javascript:;") -
+                      span.num 1
+                      a.plus(href="javascript:;") +
+          .shopPrice
+            | 本店总计：￥
+            span.shop-total-amount.ShopTotal 0.00
+    // 底部导航
+    .jl
+    .payment-bar
+      .all-checkbox
+        input#AllCheck.check.goods-check(type="checkbox")
+        | 全选
+      .shop-total
+        strong
+          | 总价：
+          i#AllTotal.total 0.00
+        span 减免：123.00
+      a.settlement(href="#") 结算
+    script.
+      mui('body').on('tap','a',function(){
+        window.top.location.href=this.href;
+      });

@@ -1,0 +1,49 @@
+extends head
+append head
+  script(type='text/javascript' src=helpers.assetUrl('activity.js'))
+block content
+  body#indexBody
+    header.mui-bar.mui-bar-nav.header
+      a.mui-action-back.mui-icon.mui-pull-left(href="")
+        i.iconfont &#xe602;
+      h1.mui-title #{title}
+      a.mui-icon.mui-pull-right(href="/")
+        i.iconfont &#xe601;
+    .mui-content
+      // 导航
+      #top
+      .title(style='border-top: none;')
+        img.lazy(src=helpers.assetUrl("rmhd.png"))
+        .alert.alert-danger(role="alert" style='margin-bottom: 0;') 
+          svg.icon(aria-hidden="true")
+            use(xlink:href="#icon-laba")
+          |  点击【复制淘口令】按钮后打开【手机淘宝】
+      ul.main
+        each item in activity
+          li(style='height: auto;')
+            -if ( new Date().valueOf() <= new Date(item.end_time).valueOf()+86400000)
+              div.box2
+                .thumbnail
+                  img.lazy(src=item.img)
+                  .caption
+                    h4=item.title
+                  p 
+                    svg.icon(aria-hidden="true")
+                      use(xlink:href="#icon-shijian2") 
+                    |  有效期
+                    =` (${item.start_time}到${item.end_time})`
+                  p
+                    svg.icon(aria-hidden="true")
+                      use(xlink:href="#icon-lianjie2")
+                    = ` 淘口令 `
+                    i.manualTpwd(contenteditable="true")=item.tpwd
+                  p(style='margin: 10px 0;text-align: center;')
+                    button.btn.btn-warning('data-clipboard-text'=item.tpwd) 复制淘口令
+    .up
+      a(href='#top')
+        svg.icon(aria-hidden="true")
+          use(xlink:href="#icon-dingbu1")
+    // 底部导航
+    include footer
+    
+    

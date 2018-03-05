@@ -1,0 +1,17 @@
+div(style='width:98%; margin:0 auto; height:40px; position:relative; display:block; overflow-y:hidden;')
+  #slider_wrap.slider_wrap
+    #j_u_c_items.u_c_items
+      .item_cell.current(scroll-left='0', data-child='all', data-cnn='all',style="width: 20%;")
+        span.red(category=0) 综合排序
+        //- 0'精选', 1'女装', 2'男装', 3'家居', 4'数码', 5'母婴', 6'食品', 7'鞋包', 8'美妝', 9'童装', 10'运动',11'汽车',12'宠物',13'计生',
+      .item_cell(scroll-left='0', data-child='all', data-cnn='news',style="width: 20%;")
+        span(category=1) 优惠比例
+      .item_cell(scroll-left='0', data-child='all', data-cnn='sports',style="width: 20%;")
+        span(category=2 ) 
+          |价格
+          svg.icon(aria-hidden="true")
+            use(xlink:href="#icon-shangxia1")
+      .item_cell(scroll-left='0', data-child='all', data-cnn='sports',style="width: 20%;")
+        span(category=2) 销量
+      .item_cell(scroll-left='45', data-child='all', data-cnn='ent',style="width: 20%;")
+        span(category=3) 即将抢完

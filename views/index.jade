@@ -1,0 +1,79 @@
+extends head
+append head
+  script(type='text/javascript' src=helpers.assetUrl('index.js'))
+block content
+  body#indexBody
+    header.mui-bar.mui-bar-nav.header
+      h1.mui-title #{title}
+      a.mui-icon.mui-pull-right(href="/hot")
+        i.iconfont &#xe603;
+    .mui-content
+      // 图片轮播
+      #slider.mui-slider
+        .mui-slider-group.mui-slider-loop
+          .mui-slider-item.mui-slider-item-duplicate
+            a(href='/activity')
+              img.lazy(src=activity[3].img)
+          -for(var i =0; i<4;i++)
+            .mui-slider-item
+              a(href='/activity')
+                img.lazy(src=activity[i].img)
+          .mui-slider-item.mui-slider-item-duplicate
+            a(href='/activity')
+              img.lazy(src=activity[0].img)
+        .mui-slider-indicator
+          .mui-indicator.mui-active
+          .mui-indicator
+          .mui-indicator
+          .mui-indicator
+      // 导航
+      ul.nav
+        li
+          a(href="#top")
+            img.lazy(src=helpers.assetUrl("icon.png"))
+            p 精品好券
+        li
+          a(href="/activity")
+            img.lazy(src=helpers.assetUrl("icon1.png"))
+            p 热门活动
+        li
+          a(href="/miaosha")
+            img.lazy(src=helpers.assetUrl("icon2.png"))
+            p 限时秒杀
+        li
+          a(href="/hot")
+            img.lazy(src=helpers.assetUrl("icon3.png"))
+            p 精品分类
+        li
+          a(href="/collect")
+            img.lazy(src=helpers.assetUrl("icon4.png"))
+            p 我的收藏
+      // 广告
+      //- .advantage
+      //-   img.lazy(src=helpers.assetUrl("adv.png")
+      #top
+      .title
+        img.lazy(src=helpers.assetUrl("hqzb.png"))
+      include menu
+      ul.wrapper( style="display: block;")
+        each item in hotcommodities
+          include commoditiesShow
+      ul.wrapper
+      ul.wrapper
+      ul.wrapper
+      ul.wrapper
+      ul.wrapper
+      ul.wrapper
+      ul.wrapper
+      ul.wrapper
+      ul.wrapper
+      ul.wrapper
+    // 回到顶部
+    .up
+      a(href='#top')
+        svg.icon(aria-hidden="true")
+          use(xlink:href="#icon-dingbu1")
+    // 底部导航
+    include footer
+      
+      

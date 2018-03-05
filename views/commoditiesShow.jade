@@ -1,0 +1,49 @@
+
+li.list-item
+  a(href=`javascript:fn(${item.num_iid})` id=`${item.num_iid}`)
+    div(style="display:none")
+      span= item.user_type
+      span= item.title
+      span= item.disprice
+      span=item.price
+      span=item.volume
+      span= item.coupon_val
+      span=item.coupon_start_time
+      span=item.coupon_end_time
+      span=item.coupon_url
+      span=item.img
+      span=item.limit
+      span=item.category
+      span=item.coupon_max
+      span=item.coupon_num
+      span=item.discount 
+      span=item.progress
+      //- span=item.tpwd 
+    .pic
+      img.lazy(data-src=`${item.img}`)
+    .text
+      h2 
+        svg.icon(aria-hidden="true")
+          case item.user_type
+            when 0
+              use(xlink:href="#icon-taobao3") 
+            default
+              use(xlink:href="#icon-tianmao1")         
+        =` ${item.title}`
+      div
+        span 现价 
+          s=` ￥${item.price} `
+        span(style="float:right;")=`月销量 ${item.volume}件`
+      div
+        span 券后价 ￥
+          b.disprice=`${item.disprice}`
+      div
+        .progress.progress-striped.active.myprogress(style="background:rgba(	255,165,0,0.4); weight:20px")
+          .progress-bar.progress-bar-warning(role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style=`width: ${item.progress}%;`)
+            div
+              span(style="position: absolute;left: 10px;")=`券：${item.coupon_val}元`
+              span(style="position: absolute;right: 10px;")=`余 ${item.coupon_num}张`   
+    .coupon
+      svg.icon(aria-hidden="true")
+          use(xlink:href="#icon-savemoney")
+      p=`省￥${item.coupon_val}`
