@@ -67,6 +67,9 @@ windows环境下!!!
     ```
   - [3.4 Express 浅析](https://github.com/nswbmw/N-blog/blob/master/book/3.4%20Express%20%E6%B5%85%E6%9E%90.md)
   
+  - []() 使用默认 favicon 图标
+    app.use(express.favicon(__dirname + '/public/images/faviocn.ioc'))
+ 
 
 3. 学习如何使用 Express + MongoDB 搭建一个博客。
 ```
