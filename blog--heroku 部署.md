@@ -11,7 +11,7 @@
     To connect using a driver via the standard MongoDB URI (what's this?):
     mongodb://<dbuser>:<dbpassword>@ds151528.mlab.com:51528/myblog
     
-    yhq   yhq123456
+    yhq   yhq123456   用户名无效 yueheqing@126.comyhq@123456
 
   ```
   - 如我创建的用户名和密码都为 myblog 的用户，新建 config/production.js，添加如下代码：
